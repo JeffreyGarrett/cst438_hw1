@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <a href="/movies/new">Add a Movie Rating</a>
+<br />
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Rating</th>
+    <th>Name</th>
+    <th>Date</th>
+  </tr>
+  <tr th:each="movie: ${movies}">
+    <td th:text="${movie.title}"></td>
+    <td th:text="${movie.rating}"></td>
+    <td th:text="${movie.name}"></td>
+    <td th:text="${movie.postingDate}"></td>
+  </tr>
+</table>
+</body>
+</html>
