@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rating Form</title>
+</head>
+<body>
+    <h2>New Movie Rating</h2>
+    <form action="#" th:action="@{/movies/new}" th:object="${movie}" method="post">
+        Movie Title: <input type="text" th:field="*{title}" />
+        <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span> <br />
+        Movie Rating: <input type="number" th:field="*{rating}" />
+        <span th:if="${#fields.hasErrors('rating')}" th:errors="*{rating}"></span> <br />
+        Your Name: <input type="text" th:field="*{name}" />
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span> <br />
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
